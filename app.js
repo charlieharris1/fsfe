@@ -6,9 +6,10 @@ app.get('/', (req, res) => {
 	res.send('Hello world!');
 })
 
-app.get('/418', (req, res) => {
+app.get('/demo', (req, res) => {
+	res.set('X-Custom-Header', 'A custom header');
 	res.status(418);
-	res.set('X-Custom-Header', 'A custom header')
+	res.send('I prefer coffee');
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}`));
